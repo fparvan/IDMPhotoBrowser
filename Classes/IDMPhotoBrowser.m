@@ -1266,6 +1266,9 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
             
             self.activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
             
+            self.activityViewController.excludedActivityTypes = [[NSArray alloc] initWithObjects:UIActivityTypePostToFacebook,
+                                                                 UIActivityTypePostToFlickr, UIActivityTypePostToTencentWeibo, UIActivityTypePostToTwitter, UIActivityTypePostToVimeo, UIActivityTypePostToWeibo,nil];
+            
             __typeof__(self) __weak selfBlock = self;
 			
 			if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
